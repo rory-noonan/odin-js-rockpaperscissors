@@ -5,25 +5,44 @@ function getComputerChoice() {
   return validChoices[index];
 }
 
-const playerChoice = "paper";
-const computerChoice = getComputerChoice();
-
 function playRound(playerChoice, computerChoice) {
   let playerValue = playerChoice.toUpperCase();
   let computerValue = computerChoice.toUpperCase();
   if (playerValue === computerValue) {
-    return `Draw! You selected ${playerChoice} and the computer selected ${computerChoice}`;
-  }
-  // Player wins
-  else if (
+    console.log(
+      `Draw! You selected ${playerChoice} and the computer selected ${computerChoice}`
+    );
+    return null;
+  } else if (
     (playerValue === "SCISSORS" && computerValue === "PAPER") ||
     (playerValue === "PAPER" && computerValue === "ROCK") ||
     (playerValue === "ROCK" && computerValue === "SCISSORS")
   ) {
-    return `You won! ${playerChoice} beats ${computerChoice}`;
+    console.log(`You won! ${playerChoice} beats ${computerChoice}`);
+    return true;
   } else {
-    return `You lost! ${computerChoice} beats ${playerChoice}`;
+    console.log(`You lost! ${computerChoice} beats ${playerChoice}`);
+    return false;
   }
 }
 
-console.log(playRound(playerChoice, computerChoice));
+function game() {
+  var playerScore = 0;
+  var computerScore = 0;
+  while (playerScore < 5 && computerScore < 5) {
+    let gameWon = playRound(prompt(), getComputerChoice());
+    switch (gameWon) {
+      case null:
+        break;
+      case true:
+        playerScore++;
+        break;
+      case false:
+        computerScore++;
+        break;
+    }
+    console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+  }
+}
+
+game();
