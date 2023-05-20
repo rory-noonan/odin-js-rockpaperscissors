@@ -35,7 +35,7 @@ function refreshScoreDisplay(result) {
 }
 
 function getPlayerChoice() {
-  return "rock"; // Dummy data for now
+  return document.querySelector('input[name="choice"]:checked').value;
 }
 
 function game() {
