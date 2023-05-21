@@ -4,18 +4,27 @@
     <title>Rock, Paper, Scissors</title>
     <meta charset="UTF-8" />
     <script src="rockpaperscissors.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <fieldset>
-      <input type="radio" name="choice" id="rock" value="Rock" />
-      <label for="rock">Rock</label>
-      <input type="radio" name="choice" id="paper" value="Paper" />
-      <label for="paper">Paper</label>
-      <input type="radio" name="choice" id="scissors" value="Scissors" />
-      <label for="scissors">Scissors</label>
-    </fieldset>
-    <button id="play">Play</button>
-    <div id="results"></div>
-    <div id="score"></div>
+    <div class="container">
+      <fieldset class="choice-input">
+        <div class="option">
+          <input type="radio" name="choice" id="rock" value="Rock" />
+          <label for="rock">Rock</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="choice" id="paper" value="Paper" />
+          <label for="paper">Paper</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="choice" id="scissors" value="Scissors" />
+          <label for="scissors">Scissors</label>
+        </div>
+      </fieldset>
+      <button id="play">Play</button>
+      <div id="results"></div>
+      <div id="score"></div>
+    </div>
   </body>
 </html>
